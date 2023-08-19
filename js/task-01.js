@@ -1,6 +1,3 @@
-// const quantityCategories = document.querySelectorAll("li.item").length;
-// console.log(`Number of categories: ${quantityCategories}`);
-
 const arrCategories = document.querySelectorAll("ul#categories>li");
 
 const quantityCategories = arrCategories.length;

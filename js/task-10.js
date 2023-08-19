@@ -10,6 +10,7 @@ const divBoxes = document.querySelector("div#boxes");
 const numberInput = document.querySelector("div#controls>input");
 
 function createBoxes(amount) {
+  console.log(888);
   const arrBoxes = [];
   for (let i = 0; i < amount; i = i + 1) {
     const box = document.createElement("div");
@@ -24,12 +25,12 @@ function createBoxes(amount) {
 }
 
 function destroyBoxes() {
+  console.log(999);
   divBoxes.innerHTML = "";
 }
-let el;
-numberInput.addEventListener("blur", (event) => {
-  el = event.currentTarget.value;
 
-  createBtn.addEventListener("click", createBoxes(el));
-  destroyBtn.addEventListener("click", destroyBoxes);
+createBtn.addEventListener("click", () => {
+  const inputValue = numberInput.value;
+  createBoxes(inputValue);
 });
+destroyBtn.addEventListener("click", destroyBoxes);

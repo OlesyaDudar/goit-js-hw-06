@@ -5,18 +5,12 @@ form.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
   event.preventDefault();
   const {
-    currentTarget: {
-      elements: {
-        email: { value: email } = {},
-        password: { value: password },
-      },
-    },
-  } = event;
-  const resultObj = { email, password };
-  // const email = event.currentTarget.elements.hafaS;
+    elements: { email, password },
+  } = event.currentTarget;
 
-  const isFormValid = Boolean(email && password);
-  if (!isFormValid) {
+  const resultObj = { email, password };
+
+  if (email.value === "" || password.value === "") {
     return alert("Please, fill in all the fields!");
   }
 
